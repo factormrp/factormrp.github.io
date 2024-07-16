@@ -41,10 +41,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload artifact
+      - name: Upload public artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './{public,includes}'
+          path: './public'
+
+      - name: Upload includes artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './includes'
 
       - name: Deploy to GitHub Pages
         id: deployment
