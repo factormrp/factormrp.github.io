@@ -42,7 +42,7 @@ jobs:
       - name: Copy private images
         run: |
           mkdir -p public/assets/images
-          cp -R private-assets/github.io/* public/assets/images/
+          cp -R shared-imgs/github.io/* public/assets/images/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
