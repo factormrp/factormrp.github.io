@@ -36,9 +36,9 @@ jobs:
         run: |
           mkdir -p deploy/
           mkdir -p deploy/includes
-          mkdir -p deploy/public/assets/images
-          cp -R shared-imgs/github.io/* deploy/public/assets/images/
-          cp -R public/* deploy/public/
+          mkdir -p deploy/assets/images
+          cp -R shared-imgs/github.io/* deploy/assets/images/
+          cp -R public/* deploy/
           cp -R includes/* deploy/includes/
 
       - name: Setup Pages
