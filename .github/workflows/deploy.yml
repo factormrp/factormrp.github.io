@@ -29,16 +29,23 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout GH pages repo
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Checkout shared images repo
+        uses: actions/checkout@v4
+        with:
+          repository: factormrp/shared-imgs
+          token: {{ secrets.IMGS_PAT }}
+          path: private-assets
 
       - name: Copy private images
         run: |
           mkdir -p public/assets/images
-          cp -R private/images/* public/assets/images/
+          cp -R private-assets/github.io/* public/assets/images/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
