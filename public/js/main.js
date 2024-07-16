@@ -18,7 +18,7 @@ function stopAnimation() {
 function resetInactivityTimer() {
     clearTimeout(inactivityTimer);
     stopAnimation();
-    inactivityTimer = setTimeout(startAnimation, 15000);
+    inactivityTimer = setTimeout(startAnimation, 7500);
 }
 
 // Event listeners
