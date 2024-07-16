@@ -37,7 +37,7 @@ jobs:
         with:
           repository: factormrp/shared-imgs
           token: {{ secrets.IMGS_PAT }}
-          path: private-assets
+          path: shared-imgs
 
       - name: Copy private images
         run: |
