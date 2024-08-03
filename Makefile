@@ -1,6 +1,9 @@
-all: docker-up
+all: up
 
-docker-up:
+up:
 	docker-compose up --build
 
-.PHONY: all docker-up
+down:
+	docker-compose down
+
+.PHONY: all up down
