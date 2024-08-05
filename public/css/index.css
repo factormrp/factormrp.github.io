@@ -4,7 +4,7 @@
     background-size: cover;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: flex-start;
     position: relative;
 }
@@ -28,6 +28,7 @@
 .content {
     margin: 0 auto;
     text-align: center;
+    padding-top: 10%;
 }
 
 @keyframes claws {
@@ -36,19 +37,33 @@
 }
 
 .title {
-    font-family: "danfo";
-    font-size: 60px;
-    font-weight: 500;
-    padding-top: 20vh;
+    align-items: center;
     animation: claws 10s ease-in-out infinite;
+    display: flex;
+    font-family: "danfo";
+    font-size: 5em;
+    font-weight: 500;
+    justify-content: center;
+    margin-bottom: -2vh;
+}
+
+@keyframes spins {
+    50% { transform: rotate(360deg);}
+}
+
+.title img {
+    align-items: inherit;
+    animation: spins 7s ease-in-out infinite;
+    display: inherit;
+    width: 0.8em;
 }
 
 .subtitle {
-    font-size: 18px;
+    font-size: 1em;
     font-style: italic;
     font-weight: 300;
 }
 
 .c2a {
-    font-size: 18px;
+    font-size: 0.5em;
 }
