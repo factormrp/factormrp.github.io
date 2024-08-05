@@ -1,13 +1,10 @@
-main {
-    padding-left: 1rem;
-}
-
 .author-title {
     align-items: center;
     display: flex;
     flex-direction: row;
     gap: 1rem;
     text-align: center;
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 768px) {
