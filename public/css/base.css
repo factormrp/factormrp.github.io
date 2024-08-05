@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "chella";
+    src: url('/assets/fonts/pulchella-static.otf');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "danfo";
+    src: url('/assets/fonts/danfo-var-elsh.ttf');
+    font-style: normal;
+}
+
+body, html {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
