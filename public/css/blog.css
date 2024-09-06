@@ -1,0 +1,15 @@
+.blog-content {
+    margin: 0 auto;
+}
+
+.blog-post {
+    box-shadow: 2px 2px 0 1px white;
+}
+
+.post-meta {
+    color: mediumturquoise;
+}
+
+.read-more, .discuss, .share {
+    color: navy;
+}
