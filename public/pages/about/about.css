@@ -1,0 +1,28 @@
+.about-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.highlight {
+    font-style: italic;
+}
+
+.profile-image {
+    margin-top: 2rem;
+}
+
+.profile-image img {
+    border-radius: 10px;
+    max-width: 300px;
+}
+
+.subtitle {
+    color: #4fc3f7;
+    font-size: 1.2rem;
+}

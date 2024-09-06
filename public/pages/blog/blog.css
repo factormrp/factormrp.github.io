@@ -1,0 +1,24 @@
+.author-image {
+    border-radius: 25px;
+    float: left;
+    height: 50px;
+    margin-right: 1rem;
+    width: 50px;
+}
+
+.blog-post {
+    border-bottom: 1px solid #333;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+}
+
+.discuss, .read-more, .share {
+    color: #4fc3f7;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+.post-meta {
+    color: #888;
+    font-size: 0.9rem;
+}

@@ -26,5 +26,4 @@ document.addEventListener('mousemove', resetInactivityTimer);
 document.addEventListener('keypress', resetInactivityTimer);
 document.addEventListener('click', resetInactivityTimer);
 
-// Initial setup
 resetInactivityTimer();

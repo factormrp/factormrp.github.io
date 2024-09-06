@@ -1,0 +1,35 @@
+.challenging {
+    border-left: 4px solid #f44336;
+}
+
+.easy {
+    border-left: 4px solid #4caf50;
+}
+
+.follow-along {
+    color: #4fc3f7;
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+}    
+
+.gallery-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.gallery-item {
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.gallery-item h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+.moderate {
+    border-left: 4px solid #2196f3;
+}
