@@ -1,13 +1,9 @@
-version: '3'
-
 services:
   web:
     build: .
     ports:
       - "8080:80"
-      - "8443:443" # Expose port 443 for HTTPS
     volumes:
-      - ./public:/usr/share/nginx/html
+      - ./public:/usr/share/nginx/html:ro
       - ./includes:/usr/share/nginx/html/includes
       - ./shared-imgs/github.io:/usr/share/nginx/html/assets/images
-      - ./certs:/etc/nginx/certs # Mount SSL certs directory
