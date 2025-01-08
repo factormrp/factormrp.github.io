@@ -6,9 +6,8 @@ up:
 down:
 	docker-compose down
 
-repull:
-	docker-compose down
-	docker rmi factormrpgithubio_web
+clean:
+	docker rmi factormrpgithubio-web
 
 prune:
 	docker system prune -af

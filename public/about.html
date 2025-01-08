@@ -7,40 +7,38 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/timeline.css">
 </head>
 <body>
     <header></header>
     <main class="content">
-        <div class="author-title">
-            <div class="profile-image">
-                <img src="/assets/images/author.jpg" alt="Maximiliano">
-            </div>
-            <h2>Soy Maximiliano</h2>
-        </div>
-        <div class="author-bio">
-            <p class="subtitle">Born in PR, raised in CA.</p>
-            <p>
-                I care deeply about <em>elegant composition</em> and quality of life.
-                I take pride in translating technical knowledge using non-technical terms 
-                in order to <span class="bold">communicate</span> as effectively 
-                as possible with others.
-            </p>
-            <p>To find out more about me, just ask.</p>
-        </div>
-        <div class="topics">
-            <h1>Southern California</h1>
-            <div class="topics-grid">
-              <!-- fin -->
-            </div>
+      <div class="author-title">
+          <div class="profile-image">
+              <img src="/assets/images/author.jpg" alt="Maximiliano">
           </div>
-          <div class="button">
-            <button id="resume-button">My Paper Trail</button>
-          </div>
-          <div id="resume-view" class="hidden">
-            <object data="/assets/pdfs/Max Patton Resume.pdf" type="application/pdf" width="100%" height="600px">
-              <p>Unable to display resume. <a href="/assets/pdfs/Max Patton Resume.pdf">Download</a> instead.</p>
-            </object>
-          </div>
+          <h2>Soy Maximiliano</h2>
+      </div>
+      <div class="author-bio">
+          <p class="subtitle">Born in PR, raised in CA.</p>
+          <p>
+              I care deeply about <em>elegant composition</em> and quality of life.
+              I take pride in translating technical knowledge using non-technical terms 
+              in order to <span class="bold">communicate</span> as effectively 
+              as possible with others.
+          </p>
+          <p>To find out more about me, just ask.</p>
+      </div>
+
+      <div class="timeline"></div>
+      
+      <div class="button">
+        <button id="resume-button">My Paper Trail</button>
+      </div>
+      <div id="resume-view" class="hidden">
+        <object data="/assets/pdfs/Max Patton Resume.pdf" type="application/pdf" width="100%" height="600px">
+          <p>Unable to display resume. <a href="/assets/pdfs/Max Patton Resume.pdf">Download</a> instead.</p>
+        </object>
+      </div>
     </main>
     <script src="js/include-nav.js"></script>
     <script src="js/pdf-viewer.js"></script>
