@@ -54,11 +54,45 @@
 }
 
 .subtitle {
-    font-size: 1em;
+    font-size: 1.5em;
     font-style: italic;
     font-weight: 300;
 }
 
 .c2a {
-    font-size: 0.5em;
+    font-size: 0.7em;
+}
+
+@media screen and (max-width: 810px) {
+    .title {
+        font-size: 3.6em;
+    }
+    .subtitle {
+        font-size: 1.2em;
+    }
+    .c2a {
+        font-size: 0.55em;
+    }
+}
+@media screen and (max-width: 530px) {
+    .title {
+        font-size: 3em;
+    }
+    .subtitle {
+        font-size: 1em;
+    }
+    .c2a {
+        font-size: 0.46em;
+    }
+}
+@media screen and (max-width: 444px) {
+    .title {
+        font-size: 2.4em;
+    }
+    .subtitle {
+        font-size: 0.9em;
+    }
+    .c2a {
+        font-size: 0.42em;
+    }
 }
