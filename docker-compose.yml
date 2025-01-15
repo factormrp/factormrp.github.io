@@ -5,5 +5,4 @@ services:
       - "8080:80"
     volumes:
       - ./public:/usr/share/nginx/html:ro
-      - ./includes:/usr/share/nginx/html/includes
       - ./shared-imgs/github.io:/usr/share/nginx/html/assets/images

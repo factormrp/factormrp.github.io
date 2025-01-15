@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('/includes/nav.html')
+    fetch('includes/nav.html')
         .then(response => response.text())
         .then(data => {
             document.querySelector('header').innerHTML = data + document.querySelector('header').innerHTML;
@@ -29,7 +29,7 @@ function initializeNavAnimation() {
     function resetInactivityTimer() {
         clearTimeout(inactivityTimer);
         stopAnimation();
-        inactivityTimer = setTimeout(startAnimation, 7500);
+        inactivityTimer = setTimeout(startAnimation, 2000);
     }
 
     // Event listeners

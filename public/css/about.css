@@ -1,39 +1,19 @@
 .content {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 100%;
     padding: 0 1em;
-}
-
-@keyframes squeeze {
-    0%, 100% { font-variation-settings: "wdth" 75; }
-    12.5% { font-variation-settings: "wdth" 112.5; }
-    25% { font-variation-settings: "wdth" 140; }
-    37.5% { font-variation-settings: "wdth" 112.5; }
-    50% { font-variation-settings: "wdth" 75; }
-    62.5% { font-variation-settings: "wdth" 37.5; }
-    75% { font-variation-settings: "wdth" 10; }
-    87.5% { font-variation-settings: "wdth" 37.5; }
 }
 
 .author-title {
     align-items: center;
     display: flex;
     gap: 1rem;
+    justify-content: center;
     text-align: center;
-}
-
-.author-title:hover {
-    animation: squeeze 8s linear;
 }
 
 .author-title h2 {
     font-size: 3em;
-}
-
-@media screen and (max-width: 768px) {
-    .author-title h2 {
-        font-size: 2em;
-    }
 }
 
 .profile-image img {
@@ -41,16 +21,54 @@
     width: 150px;
 }
 
-.author-bio {
-    width: 90%;
-    max-width: 100%;
+@media screen and (max-width: 810px) {
+    .author-title h2 {
+        font-size: 2em;
+    }
+
+    .profile-image img {
+        border-radius: 50%;
+        width: 125px;
+    }
+
+    .author-bio {
+        font-size: 1em;
+    }
 }
 
-@media screen and (min-width: 768px) {
-    .author-bio {
-        width: 60%;
-        max-width: unset;
+@media screen and (max-width: 530px) {
+    .author-title h2 {
+        font-size: 1.5em;
     }
+
+    .profile-image img {
+        border-radius: 50%;
+        width: 125px;
+    }
+
+    .author-bio {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 444px) {
+    .author-title h2 {
+        font-size: 1em;
+    }
+
+    .profile-image img {
+        border-radius: 50%;
+        width: 75px;
+    }
+
+    .author-bio p {
+        font-size: 0.6em;
+    }
+}
+
+.author-bio {
+    font-size: 1em;
+    width: 100%;
 }
 
 .subtitle {
@@ -61,48 +79,12 @@
     font-weight: bold;
 }
 
-.topics {
-    width: 100%;
-}
-
 h1 {
     animation: claws 5s ease-in-out infinite;
     color: white;
     font-family: "danfo";
     font-weight: 100;
     margin-bottom: 20px;
-}
-
-.topics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5em;
-}
-
-.topic-card {
-    background-color: #333;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-}
-
-.topic-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.topic-name {
-    color: white;
-    padding: 10px;
-    margin: 0;
-
-}
-
-.topic-card p {
-    color: #ccc;
-    padding: 0 10px;
-    margin: 5px 0;
 }
 
 .hidden {

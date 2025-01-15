@@ -1,0 +1,132 @@
+/* Timeline Container */
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.timeline::after {
+    content: '';
+    background-color: #ddd;
+    bottom: 0;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    width: 2px;
+    z-index: 1;
+}
+
+/* Timeline Items */
+.timeline-item {
+    position: relative;
+}
+
+.left {
+    left: 25%;
+}
+
+.right {
+    left: 57%;
+}
+
+/* Timeline Content */
+.timeline-content {
+    background: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    padding: 10px;
+    transition: all 0.3s ease; /* Smooth effect for expansion */
+    width: 15%;
+}
+
+/* Expanded State */
+.timeline-item.left.expanded .timeline-content {
+    transform: scale(1.1) translateX(-5%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item.right.expanded .timeline-content {   
+    transform: scale(1.1) translateX(2%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none;
+}
+
+.timeline-item.expanded .hidden {
+    display: block;
+}
+
+/* Image Styling */
+.timeline-image {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    margin: 10px 0;
+    transition: opacity 0.3s ease; /* Smooth fade-in effect */
+}
+
+/* Text Styling */
+.timeline-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+.timeline-date {
+    font-size: 1.2em;
+    color: #aaa;
+    margin: 0 0 5px;
+}
+
+.timeline-blurb {
+    font-size: 1.2em;
+    color: #bbb;
+    margin: 0;
+}
+
+@media screen and (max-width: 810px) {
+    .timeline-name {
+        font-size: 1em;
+    }
+
+    .timeline-date {
+        font-size: 0.8em;
+    }
+
+    .timeline-blurb {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .timeline-name {
+        font-size: 0.8em;
+    }
+
+    .timeline-date {
+        font-size: 0.5em;
+    }
+
+    .timeline-blurb {
+        font-size: 0.2em;
+    }
+}
+
+@media screen and (max-width: 444px) {
+    .timeline-name {
+        font-size: 0.5em;
+    }
+
+    .timeline-date {
+        font-size: 0.2em;
+    }
+
+    .timeline-blurb {
+        font-size: 0.2em;
+    }
+}
