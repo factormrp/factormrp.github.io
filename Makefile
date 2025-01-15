@@ -1,3 +1,5 @@
+IMG_NAME=factormrpgithubio-web
+
 all: up
 
 up:
@@ -6,9 +8,8 @@ up:
 down:
 	docker-compose down
 
-repull:
-	docker-compose down
-	docker rmi factormrpgithubio_web
+clean:
+	docker rmi $(IMG_NAME)
 
 prune:
 	docker system prune -af
