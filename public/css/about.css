@@ -1,3 +1,19 @@
+:root {
+    --smol-img: 5vh;
+    --mid-img: 7vh;
+    --big-img: 50vh;
+    --stubby: 10vw;
+    --short: 20vw;
+    --span: 70vw;
+    --full: 95vw;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
 .content {
     margin: 0 auto;
     padding: 0 1em;
@@ -17,18 +33,17 @@
 
 .profile-image img {
     border-radius: 50%;
-    width: 150px;
+    width: var(--mid-img);
 }
 
 .author-bio {
-    width: 90%;
-    max-width: 100%;
+    width: var(--span);
 }
 
 
 .author-bio {
     font-size: 1em;
-    width: 100%;
+    width: var(--full);
 }
 
 .subtitle {
@@ -39,35 +54,20 @@
     font-weight: bold;
 }
 
-.topics {
-    width: 100%;
-}
-
-h1 {
-    animation: claws 5s ease-in-out infinite;
-    color: white;
-    font-family: "danfo";
-    font-weight: 100;
-    margin-bottom: 20px;
-}
-
 .topics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
     gap: 1.5em;
 }
 
 .topic-card {
-    background-color: #333;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-}
-
-.topic-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    width: var(--span);
+    height: var(--big-img);
+    background-size: cover;
+    background-position: 0 110vh;
+    margin-bottom: var(--smol-img);
 }
 
 .topic-name {
@@ -97,14 +97,14 @@ h1 {
 }
   
 #resume-preview img {
-    width: 100%;
+    width: var(--full);
     height: auto;
 }
 
 .button {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: var(--full);
 }
 
 #resume-button {
@@ -141,7 +141,7 @@ h1 {
     }
     .profile-image img {
         border-radius: 50%;
-        width: 125px;
+        width: var(--mid-img);
     }
 }
 
@@ -154,7 +154,7 @@ h1 {
     }
     .profile-image img {
         border-radius: 50%;
-        width: 125px;
+        width: var(--mid-img);
     }
     #resume-button {
         font-size: 0.8em;

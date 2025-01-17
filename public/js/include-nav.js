@@ -29,7 +29,7 @@ function initializeNavAnimation() {
     function resetInactivityTimer() {
         clearTimeout(inactivityTimer);
         stopAnimation();
-        inactivityTimer = setTimeout(startAnimation, 7500);
+        inactivityTimer = setTimeout(startAnimation, 1000);
     }
 
     // Event listeners
