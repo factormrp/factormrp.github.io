@@ -1,7 +1,9 @@
 :root {
-    --smol-img: 5vh;
-    --mid-img: 7vh;
-    --big-img: 50vh;
+    --smol: 5vh;
+    --mid: 7vh;
+    --big: 15vh;
+    --large: 20vh;
+    --giant: 50vh;
     --stubby: 10vw;
     --short: 20vw;
     --span: 70vw;
@@ -33,48 +35,34 @@ header {
 
 .profile-image img {
     border-radius: 50%;
-    width: var(--mid-img);
-}
-
-.author-bio {
-    width: var(--span);
-}
-
-
-.author-bio {
-    font-size: 1em;
-    width: var(--full);
+    width: var(--big);
 }
 
 .subtitle {
     font-style: italic;
 }
 
-.bold {
-    font-weight: bold;
-}
-
-.topics-grid {
-
-    gap: 1.5em;
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .topic-card {
+    background-position: 0 60%;
+    background-size: cover;
     border-radius: 10px;
+    height: var(--large);
+    margin-bottom: var(--smol);
     overflow: hidden;
     position: relative;
     width: var(--span);
-    height: var(--big-img);
-    background-size: cover;
-    background-position: 0 110vh;
-    margin-bottom: var(--smol-img);
 }
 
 .topic-name {
     color: white;
     padding: 10px;
     margin: 0;
-
 }
 
 .topic-card p {
@@ -88,17 +76,17 @@ header {
 }
 
 #resume-preview {
-    position: absolute;
-    width: 200px;
-    height: 200px;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 200px;
     overflow: hidden;
+    position: absolute;
+    width: 200px;
 }
   
 #resume-preview img {
-    width: var(--full);
     height: auto;
+    width: var(--full);
 }
 
 .button {
@@ -133,28 +121,20 @@ header {
 }
 
 @media screen and (max-width: 810px) {
-    .author-bio {
-        font-size: 1em;
+    .author-bio p {
+        font-size: 0.9em;
     }
     .author-title h2 {
-        font-size: 2em;
-    }
-    .profile-image img {
-        border-radius: 50%;
-        width: var(--mid-img);
+        font-size: 1.9em;
     }
 }
 
 @media screen and (max-width: 530px) {
     .author-bio p {
-        font-size: 0.8em;
+        font-size: 0.75em;
     }
     .author-title h2 {
         font-size: 1.5em;
-    }
-    .profile-image img {
-        border-radius: 50%;
-        width: var(--mid-img);
     }
     #resume-button {
         font-size: 0.8em;
@@ -171,10 +151,6 @@ header {
     }
     .author-title h2 {
         font-size: 1em;
-    }
-    .profile-image img {
-        border-radius: 50%;
-        width: 75px;
     }
     #resume-button {
         font-size: 0.6em;
