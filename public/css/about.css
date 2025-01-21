@@ -42,6 +42,12 @@ header {
     font-style: italic;
 }
 
+.author-bio {
+    margin: 0 auto;
+    text-align: center;
+    width: var(--span);
+}
+
 .timeline {
     display: flex;
     flex-direction: column;
