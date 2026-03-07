@@ -15,13 +15,60 @@
     50% { font-variation-settings: "ELSH" 100; }
 }
 
+/* ── Theme tokens ──────────────────────────────────────────────────────────
+   Override these two blocks with your colour / image choices.
+   Everything else on the site reads from these variables.
+   ───────────────────────────────────────────────────────────────────────── */
+
+:root,
+[data-theme="dark"] {
+    --color-bg:           #1a1a1a;
+    --color-text:         #ffffff;
+    --color-text-muted:   #cccccc;
+    --color-nav-text:     #ffffff;
+    --color-overlay:      rgba(0, 0, 0, 0.5);
+    --color-card-bg:      #333333;
+    --color-card-border:  #ffffff;
+    --color-button-bg:    #333333;
+    --color-button-text:  #ffffff;
+    --color-accent:       mediumturquoise;
+    --color-link:         navy;
+    --text-shadow:        2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    /* TODO – swap these paths for your dark-mode background images */
+    --bg-index:  url('/assets/images/white-mountain-hazy-fog-inverted.jpg');
+    --bg-topic-1: none; /* add per-card images here if needed */
+}
+
+[data-theme="light"] {
+    --color-bg:           #f5f5f5;
+    --color-text:         #111111;
+    --color-text-muted:   #444444;
+    --color-nav-text:     #111111;
+    --color-overlay:      rgba(255, 255, 255, 0.35);
+    --color-card-bg:      #e8e8e8;
+    --color-card-border:  #111111;
+    --color-button-bg:    #dddddd;
+    --color-button-text:  #111111;
+    --color-accent:       mediumturquoise;
+    --color-link:         navy;
+    --text-shadow:        1px 1px 3px rgba(255, 255, 255, 0.6);
+
+    /* TODO – swap these paths for your light-mode background images */
+    --bg-index:  url('/assets/images/industrial-city-skyline.gif');
+    --bg-topic-1: none;
+}
+
+/* ── Base styles (theme-aware) ─────────────────────────────────────────── */
+
 body, html {
-    background-color: #1a1a1a;
-    color: #fff;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     font-family: "any";
     font-size: 20px;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: var(--text-shadow);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }

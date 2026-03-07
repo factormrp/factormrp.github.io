@@ -1,5 +1,5 @@
 .header {
-    background-image: url('/assets/images/white-mountain-hazy-fog-inverted.jpg');
+    background-image: var(--bg-index);
     background-position: center;
     background-size: cover;
     display: flex;
@@ -7,10 +7,11 @@
     min-height: 100vh;
     justify-content: flex-start;
     position: relative;
+    transition: background-image 0.3s ease;
 }
 
 .header::before {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--color-overlay);
     bottom: 0;
     content: "";
     left: 0;
@@ -18,6 +19,7 @@
     right: 0;
     top: 0;
     z-index: 1;
+    transition: background-color 0.3s ease;
 }
 
 .header > * {
@@ -63,6 +65,29 @@
     font-size: 0.7em;
 }
 
+:root,
+[data-theme="dark"] {
+    --color-text-backdrop: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] {
+    --color-text-backdrop: rgba(255, 255, 255, 0.2);
+}
+
+.paragraph {
+    display: inline-block;
+    margin-top: 1.2em;
+}
+
+.text-backdrop {
+    background-color: var(--color-text-backdrop);
+    backdrop-filter: blur(4px);
+    border-radius: 14px;
+    padding: 0.1em 0.25em 0.1em;
+    transition: background-color 0.3s ease;
+    -webkit-backdrop-filter: blur(4px);
+}
+
 @media screen and (max-width: 810px) {
     .title {
         font-size: 3.6em;
@@ -96,3 +121,15 @@
         font-size: 0.42em;
     }
 }
+/* ── Per-theme title variants ───────────────────────────────────────────────
+   .title--dark  = original "Factor's Web" with eight-ball (dark only)
+   .title--light = plain "Max's Web" (light only)
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Default (dark): show dark title, hide light title */
+.title--dark  { display: flex; }
+.title--light { display: none; }
+
+/* Light mode: hide dark title, show light title */
+[data-theme="light"] .title--dark  { display: none; }
+[data-theme="light"] .title--light { display: flex; }

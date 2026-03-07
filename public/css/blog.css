@@ -3,13 +3,13 @@
 }
 
 .blog-post {
-    box-shadow: 2px 2px 0 1px white;
+    box-shadow: 2px 2px 0 1px var(--color-card-border);
 }
 
 .post-meta {
-    color: mediumturquoise;
+    color: var(--color-accent);
 }
 
 .read-more, .discuss, .share {
-    color: navy;
+    color: var(--color-link);
 }

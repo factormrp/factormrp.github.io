@@ -3,9 +3,26 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.text())
         .then(data => {
             document.querySelector('header').innerHTML = data + document.querySelector('header').innerHTML;
+            syncToggleLabel();
             initializeNavAnimation();
         })
         .catch(error => console.error('Error loading navigation:', error));
+});
+
+/** Keeps the toggle button label in sync with the actual theme. */
+function syncToggleLabel() {
+    const theme = window.siteTheme ? window.siteTheme.getTheme() : 'dark';
+    document.querySelectorAll('.theme-toggle').forEach(btn => {
+        btn.textContent = theme === 'dark' ? 'Light' : 'Dark';
+        btn.dataset.currentTheme = theme;
+    });
+}
+
+// Re-sync label whenever theme changes (e.g. toggled on another page)
+document.addEventListener('themechange', (e) => {
+    document.querySelectorAll('.theme-toggle').forEach(btn => {
+        btn.textContent = e.detail.theme === 'dark' ? 'Light' : 'Dark';
+    });
 });
 
 function initializeNavAnimation() {
