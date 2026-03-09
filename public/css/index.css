@@ -48,6 +48,12 @@
     50% { transform: rotate(360deg);}
 }
 
+.title--dark  { display: flex; }
+.title--light { display: none; }
+
+[data-theme="light"] .title--dark  { display: none; }
+[data-theme="light"] .title--light { display: flex; }
+
 .title img {
     align-items: inherit;
     animation: spins 7s ease-in-out infinite;
@@ -121,15 +127,3 @@
         font-size: 0.42em;
     }
 }
-/* ── Per-theme title variants ───────────────────────────────────────────────
-   .title--dark  = original "Factor's Web" with eight-ball (dark only)
-   .title--light = plain "Max's Web" (light only)
-   ───────────────────────────────────────────────────────────────────────── */
-
-/* Default (dark): show dark title, hide light title */
-.title--dark  { display: flex; }
-.title--light { display: none; }
-
-/* Light mode: hide dark title, show light title */
-[data-theme="light"] .title--dark  { display: none; }
-[data-theme="light"] .title--light { display: flex; }

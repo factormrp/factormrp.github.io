@@ -27,17 +27,17 @@ document.addEventListener('themechange', (e) => {
 
 function initializeNavAnimation() {
     let inactivityTimer;
-    const navItems = document.querySelectorAll('.nav-item');
+    const bobItems = document.querySelectorAll('.nav-item');
 
     function startAnimation() {
-        navItems.forEach((item, index) => {
+        bobItems.forEach((item, index) => {
             item.classList.add('animate');
             item.style.animationDelay = `${index * 0.2}s`;
         });
     }
 
     function stopAnimation() {
-        navItems.forEach(item => {
+        bobItems.forEach(item => {
             item.classList.remove('animate');
             item.style.animationDelay = '';
         });

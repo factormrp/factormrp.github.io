@@ -15,6 +15,11 @@
     50% { font-variation-settings: "ELSH" 100; }
 }
 
+@keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
 /* ── Theme tokens ──────────────────────────────────────────────────────────
    Override these two blocks with your colour / image choices.
    Everything else on the site reads from these variables.
@@ -35,7 +40,6 @@
     --color-link:         navy;
     --text-shadow:        2px 2px 4px rgba(0, 0, 0, 0.5);
 
-    /* TODO – swap these paths for your dark-mode background images */
     --bg-index:  url('/assets/images/white-mountain-hazy-fog-inverted.jpg');
     --bg-topic-1: none; /* add per-card images here if needed */
 }
@@ -54,7 +58,6 @@
     --color-link:         navy;
     --text-shadow:        1px 1px 3px rgba(255, 255, 255, 0.6);
 
-    /* TODO – swap these paths for your light-mode background images */
     --bg-index:  url('/assets/images/industrial-city-skyline.gif');
     --bg-topic-1: none;
 }

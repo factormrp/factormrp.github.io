@@ -1,11 +1,13 @@
 :root {
-    --smol: 5vh;
-    --mid: 7vh;
+    --smol: 4vh;
+    --mid: 8vh;
     --big: 15vh;
     --large: 20vh;
+    --huge: 29vh;
     --giant: 50vh;
     --stubby: 10vw;
     --short: 20vw;
+    --wide: 30vw;
     --span: 70vw;
     --full: 95vw;
 }
@@ -21,21 +23,47 @@ header {
     padding: 0 1em;
 }
 
+.author--dark  { display: flex; }
+.author--light { display: none; }
+[data-theme="light"] .author--dark  { display: none; }
+[data-theme="light"] .author--light { display: flex; }
+
 .author-title {
     align-items: center;
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
 }
 
-.author-title h2 {
-    font-size: 3em;
+.profile-image {
+    align-items: center;
+    display: flex;
+    height: var(--large);
+    justify-content: center;
 }
 
 .profile-image img {
     border-radius: 50%;
-    width: var(--big);
+    object-fit: cover;
+    object-position: center;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+[data-theme="light"] .profile-image img { 
+    height: var(--huge);
+}
+
+[data-theme="dark"] .profile-image img {
+    width: var(--short);
+}
+
+#email {
+    text-decoration: unset;
+}
+
+.author-title h2 {
+    font-size: var(--mid);
 }
 
 .subtitle {
@@ -48,12 +76,40 @@ header {
     width: var(--span);
 }
 
-.timeline {
+.hidden {
+    display: none;
+}
+
+.timeline-header--dark  { 
+    display: flex;
+    justify-content: center;
+    margin-top: var(--mid);
+    margin-bottom: var(--smol);
+}
+[data-theme="light"] .timeline-header--dark { display: none; }
+
+[data-theme="light"] .timeline-header--light { 
+    display: flex;
+    font-size: var(--smol);
+    font-weight: bold;
+    justify-content: center;
+    margin-top: var(--mid);
+    margin-bottom: var(--smol);
+}
+.timeline-header--light { display: none; }
+
+[data-theme="light"] .timeline {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+[data-theme="dark"] .timeline {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* ── Topic cards ────────────────────────────────────────────────────────── */
 .topic-card {
     background-position: 0 60%;
     background-size: cover;
@@ -77,10 +133,37 @@ header {
     margin: 5px 0;
 }
 
-.hidden {
-    display: none;
+/* ── Skill cards ────────────────────────────────────────────────────────── */
+.skill-row {
+    gap: var(--smol)
 }
 
+.skill-year-label {
+    align-items: center;
+    color: var(--color-text-muted);
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    min-width: 3em;
+}
+
+.skill-card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: var(--mid);
+}
+
+.skill-img {
+    height: 50%;
+}
+
+.skill-label {
+    font-size: 0.45em;
+    text-align: center;
+}
+
+/* ── Resume preview ─────────────────────────────────────────────────────── */
 #resume-preview {
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -89,7 +172,7 @@ header {
     position: absolute;
     width: 200px;
 }
-  
+
 #resume-preview img {
     height: auto;
     width: var(--full);
@@ -112,7 +195,7 @@ header {
     font-size: 1em;
     margin: 5vh auto;
     padding: 0.7em 1em;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .resume-preview {
@@ -127,6 +210,7 @@ header {
     height: 60vh;
 }
 
+/* ── Media queries ──────────────────────────────────────────────────────── */
 @media screen and (max-width: 810px) {
     .author-bio p {
         font-size: 0.9em;
@@ -166,131 +250,4 @@ header {
         transform: scale(0.85) translateX(-5vw);
         width: 100vw;
     }
-}
-
-.author--dark  { display: flex; }
-.author--light { display: none; }
-
-/* Light mode: hide dark author, show light author */
-[data-theme="light"] .author--dark  { display: none; }
-[data-theme="light"] .author--light { display: flex; }
-
-/* ── Skill Timeline (light mode only) ───────────────────────────────────────
-   The dark-mode .timeline uses topics-grid.js (photo cards).
-   In light mode, .timeline is replaced by the canvas-drawn skill timeline.
-   ───────────────────────────────────────────────────────────────────────── */
-
-.skill-timeline-wrap {
-    margin: var(--big) 0 var(--mid);
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-/* The actual scrollable surface — wider than the viewport */
-.skill-timeline-scroller {
-    cursor: grab;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    position: relative;
-    scrollbar-width: none;        /* Firefox */
-    -ms-overflow-style: none;     /* IE/Edge */
-}
-
-.skill-timeline-scroller::-webkit-scrollbar { display: none; }
-.skill-timeline-scroller:active { cursor: grabbing; }
-
-.skill-timeline-canvas {
-    display: block;
-}
-
-/* ── Arrow hint ─────────────────────────────────────────────────────────── */
-
-.skill-timeline-hint {
-    align-items: center;
-    animation: hint-pulse 1.4s ease-in-out infinite;
-    color: var(--color-text);
-    display: flex;
-    font-size: 2em;
-    left: 78px;
-    opacity: 0.75;
-    pointer-events: none;
-    position: absolute;
-    top: calc(200px - 0.6em);    /* vertically centred on the line */
-    transition: opacity 0.4s ease;
-}
-
-.skill-timeline-hint.hidden {
-    opacity: 0;
-}
-
-@keyframes hint-pulse {
-    0%, 100% { transform: translateX(0);   opacity: 0.75; }
-    50%       { transform: translateX(8px); opacity: 1;    }
-}
-
-/* ── Skill cards ─────────────────────────────────────────────────────────── */
-
-.skill-card {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    transform: translateY(10px);
-    transition: opacity 0.35s ease, transform 0.35s ease;
-    width: 90px;
-    /* card is centred on its tick; shift left by half width */
-    margin-left: -45px;
-}
-
-.skill-card.visible {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
-.skill-card img,
-.skill-card-icon {
-    border: 2px solid var(--color-text);
-    border-radius: 10px;
-    height: 64px;
-    object-fit: cover;
-    width: 64px;
-}
-
-.skill-card-icon {
-    align-items: center;
-    background-color: var(--color-card-bg);
-    color: var(--color-text);
-    display: flex;
-    font-size: 1.6em;
-    font-weight: 700;
-    justify-content: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.skill-card-label {
-    color: var(--color-text);
-    font-size: 0.55em;
-    font-weight: 600;
-    text-align: center;
-    text-shadow: none;
-}
-
-.skill-card-year {
-    color: var(--color-text-muted);
-    font-size: 0.45em;
-    text-shadow: none;
-}
-
-/* Vertical connector from card bottom to tick mark */
-.skill-card-connector {
-    background-color: var(--color-text);
-    height: 26px;
-    margin-top: 2px;
-    opacity: 0.5;
-    width: 2px;
 }
