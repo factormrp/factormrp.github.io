@@ -60,6 +60,7 @@ header {
 
 #email {
     text-decoration: unset;
+    color: var(--color-link);
 }
 
 .author-title h2 {
@@ -82,6 +83,8 @@ header {
 
 .timeline-header--dark  { 
     display: flex;
+    font-size: var(--smol);
+    font-weight: bold;
     justify-content: center;
     margin-top: var(--mid);
     margin-bottom: var(--smol);
@@ -193,7 +196,7 @@ header {
     display: inline-block;
     font-weight: 200;
     font-size: 1em;
-    margin: 5vh auto;
+    margin: var(--smol) auto;
     padding: 0.7em 1em;
     transition: background-color 0.5s ease, color 0.5s ease;
 }

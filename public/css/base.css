@@ -34,10 +34,10 @@
     --color-overlay:      rgba(0, 0, 0, 0.5);
     --color-card-bg:      #333333;
     --color-card-border:  #ffffff;
-    --color-button-bg:    #dddddd;
+    --color-button-bg:    #333333;
     --color-button-text:  #ffffff;
     --color-accent:       mediumturquoise;
-    --color-link:         navy;
+    --color-link:         olive;
     --text-shadow:        2px 2px 4px rgba(0, 0, 0, 0.5);
 
     --bg-index:  url('/assets/images/white-mountain-hazy-fog-inverted.jpg');
