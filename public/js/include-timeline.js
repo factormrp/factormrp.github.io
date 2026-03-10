@@ -13,10 +13,11 @@ export const loadGallery = async () => {
   for (const img of Gallery.images) {
     try {
       const blob = await getImageBlob(img.url);
-      const div = document.createElement('div');
+      const div = document.createElement('a');
       div.className = 'topic-card';
       div.style.backgroundImage = `url(${URL.createObjectURL(blob)})`;
       div.setAttribute('alt', img.alt);
+      div.href = `${img.name.toLowerCase().replace(' ','-')}.html`
       const name  = document.createElement('h3');
       name.textContent = img.name;
       name.className = 'topic-name';
@@ -35,19 +36,23 @@ export const loadGallery = async () => {
 };
 
 export const loadSkillset = async() => {
-  const byYear = Skillset.skills.reduce((acc, skill) => {
-    (acc[skill.year] = acc[skill.year] || []).push(skill);
+  const byType = Skillset.skills.reduce((acc, skill) => {
+    (acc[skill.type] = acc[skill.type] || []).push(skill);
     return acc;
   }, {});
 
-  for (const [year, skills] of Object.entries(byYear)) {
+  for (const [type, skills] of Object.entries(byType)) {
     const row = document.createElement('div');
     row.className = 'skill-row';
 
-    const yearLabel = document.createElement('span');
-    yearLabel.className = 'skill-year-label';
-    yearLabel.textContent = year;
-    row.appendChild(yearLabel);
+    const label = document.createElement('a');
+    label.className = 'skill-card-label';
+    label.textContent = type;
+    label.href = `${type.toLowerCase()}.html`
+    row.appendChild(label);
+
+    const cardsGroup = document.createElement('div');
+    cardsGroup.className = 'skill-cards-group';
     
     for (const skill of skills) {
       const div = document.createElement('div');
@@ -60,9 +65,9 @@ export const loadSkillset = async() => {
       label.className = 'skill-label';
       label.textContent = skill.label;
       div.append(img, label);
-      row.appendChild(div);
+      cardsGroup.appendChild(div);
     }
-
+    row.appendChild(cardsGroup);
     timelineEl.appendChild(row);
   }
 }

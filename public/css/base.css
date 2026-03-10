@@ -20,11 +20,33 @@
     50% { transform: translateY(-5px); }
 }
 
-/* ── Theme tokens ──────────────────────────────────────────────────────────
-   Override these two blocks with your colour / image choices.
-   Everything else on the site reads from these variables.
-   ───────────────────────────────────────────────────────────────────────── */
+:root {
+    --nano-pix: 1px;
+    --tiny-pix: 5px;
+    --small-pix: 10px;
+    --giant-pix: 200px;
+    --nano-font: 0.5em;
+    --tiny-font: 1em;
+    --small-font: 2em;
+    --mid-font: 3em;
+    --tiny: 2vh;
+    --smol: 4vh;
+    --mid: 8vh;
+    --big: 15vh;
+    --large: 20vh;
+    --huge: 29vh;
+    --giant: 50vh;
+    --mongo: 80vh;
+    --stubby: 2vw;
+    --short: 4vw;
+    --reg: 8vw;
+    --long: 15vw;
+    --wide: 30vw;
+    --span: 70vw;
+    --full: 99vw;
+}
 
+/* ── Themes ─────────────────────────────────────────────────────────────── */
 :root,
 [data-theme="dark"] {
     --color-bg:           #1a1a1a;
@@ -55,7 +77,7 @@
     --color-button-bg:    #dddddd;
     --color-button-text:  #111111;
     --color-accent:       mediumturquoise;
-    --color-link:         navy;
+    --color-link:         rgb(255, 140, 0);
     --text-shadow:        1px 1px 3px rgba(255, 255, 255, 0.6);
 
     --bg-index:  url('/assets/images/industrial-city-skyline.gif');
@@ -63,7 +85,6 @@
 }
 
 /* ── Base styles (theme-aware) ─────────────────────────────────────────── */
-
 body, html {
     background-color: var(--color-bg);
     color: var(--color-text);
